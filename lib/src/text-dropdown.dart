@@ -1,4 +1,4 @@
-import 'package:dropdown_plus/dropdown_plus.dart';
+import 'package:dropdown_plus_plus/dropdown_plus.dart';
 import 'package:flutter/material.dart';
 
 /// Simple dorpdown whith plain text as a dropdown items.

@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dropdown_plus:
+  dropdown_plus_plus:
     path: ../
 
 
