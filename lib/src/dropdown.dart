@@ -66,6 +66,9 @@ class DropdownFormField<T> extends StatefulWidget {
   /// Style the search box text
   final TextStyle? searchTextStyle;
 
+  /// Cursor color of the search box
+  final Color? cursorColor;
+
   /// Message to disloay if the search dows not match with any item, Default : "No matching found!"
   final String emptyText;
 
@@ -90,6 +93,7 @@ class DropdownFormField<T> extends StatefulWidget {
     this.onSaved,
     this.dropdownHeight,
     this.searchTextStyle,
+    this.cursorColor,
     this.emptyText = "No matching found!",
     this.emptyActionText = 'Create new',
     this.onEmptyActionPressed,
@@ -198,9 +202,10 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
                 isFocused: _isFocused,
                 child: this._overlayEntry != null
                     ? EditableText(
-                        style: TextStyle(fontSize: 16, color: Colors.black87),
+                        style: widget.searchTextStyle ??
+                            TextStyle(fontSize: 16, color: Colors.black87),
                         controller: _searchTextController,
-                        cursorColor: Colors.black87,
+                        cursorColor: widget.cursorColor ?? Colors.black87,
                         focusNode: _searchFocusNode,
                         backgroundCursorColor: Colors.transparent,
                         onChanged: (str) {
@@ -374,26 +379,26 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
       } else {
         _toggleOverlay();
       }
-      return false;
+      return KeyEventResult.ignored;
     } else if (event.isKeyPressed(LogicalKeyboardKey.escape)) {
       _removeOverlay();
-      return true;
+      return KeyEventResult.handled;
     } else if (event.isKeyPressed(LogicalKeyboardKey.arrowDown)) {
       int v = _listItemFocusedPosition;
       v++;
       if (v >= _options!.length) v = 0;
       _listItemFocusedPosition = v;
       _listItemsValueNotifier.value = List<T>.from(_options ?? []);
-      return true;
+      return KeyEventResult.handled;
     } else if (event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
       int v = _listItemFocusedPosition;
       v--;
       if (v < 0) v = _options!.length - 1;
       _listItemFocusedPosition = v;
       _listItemsValueNotifier.value = List<T>.from(_options ?? []);
-      return true;
+      return KeyEventResult.handled;
     }
-    return false;
+    return KeyEventResult.ignored;
   }
 
   _search(String str) async {

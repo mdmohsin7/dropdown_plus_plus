@@ -12,6 +12,8 @@ class TextDropdownFormField extends StatelessWidget {
   final bool Function(String item, String str)? filterFn;
   final Future<List<String>> Function(String str)? findFn;
   final double? dropdownHeight;
+  final Color? cursorColor;
+  final TextStyle? searchTextStyle;
 
   TextDropdownFormField({
     Key? key,
@@ -24,11 +26,15 @@ class TextDropdownFormField extends StatelessWidget {
     this.findFn,
     this.filterFn,
     this.dropdownHeight,
+    this.cursorColor,
+    this.searchTextStyle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DropdownFormField<String>(
+      searchTextStyle: searchTextStyle,
+      cursorColor: cursorColor,
       decoration: decoration,
       onSaved: onSaved,
       controller: controller,
