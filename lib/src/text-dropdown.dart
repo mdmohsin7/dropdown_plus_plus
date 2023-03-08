@@ -14,6 +14,8 @@ class TextDropdownFormField extends StatelessWidget {
   final double? dropdownHeight;
   final Color? cursorColor;
   final TextStyle? searchTextStyle;
+  final TextStyle? displayTextStyle;
+  final Widget? fieldPrefix;
 
   TextDropdownFormField({
     Key? key,
@@ -28,12 +30,15 @@ class TextDropdownFormField extends StatelessWidget {
     this.dropdownHeight,
     this.cursorColor,
     this.searchTextStyle,
+    this.displayTextStyle,
+    this.fieldPrefix,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DropdownFormField<String>(
       searchTextStyle: searchTextStyle,
+      fieldPrefix: fieldPrefix,
       cursorColor: cursorColor,
       decoration: decoration,
       onSaved: onSaved,
@@ -43,7 +48,7 @@ class TextDropdownFormField extends StatelessWidget {
       dropdownHeight: dropdownHeight,
       displayItemFn: (dynamic str) => Text(
         str ?? '',
-        style: TextStyle(fontSize: 16),
+        style: displayTextStyle ?? TextStyle(fontSize: 16),
       ),
       findFn: findFn ?? (dynamic str) async => options,
       filterFn: filterFn ??
