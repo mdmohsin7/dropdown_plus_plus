@@ -1,4 +1,4 @@
-import 'package:dropdown_plus/dropdown_plus.dart';
+import 'package:dropdown_plus_plus/dropdown_plus.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -73,9 +73,18 @@ class _MyHomePageState extends State<MyHomePage> {
             DropdownFormField<Map<String, dynamic>>(
               onEmptyActionPressed: () async {},
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  suffixIcon: Icon(Icons.arrow_drop_down),
-                  labelText: "Access"),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                border: OutlineInputBorder(),
+                suffixIcon: Icon(Icons.arrow_drop_down),
+                label: Row(
+                  children: [
+                    SizedBox(
+                      width: 35,
+                    ),
+                    Text("Access"),
+                  ],
+                ),
+              ),
               onSaved: (dynamic str) {},
               onChanged: (dynamic str) {},
               validator: (dynamic str) {},

@@ -78,6 +78,8 @@ class DropdownFormField<T> extends StatefulWidget {
   /// this functon triggers on click of emptyAction button
   final Future<void> Function()? onEmptyActionPressed;
 
+  final Widget? fieldPrefix;
+
   DropdownFormField({
     Key? key,
     required this.dropdownItemFn,
@@ -98,6 +100,7 @@ class DropdownFormField<T> extends StatefulWidget {
     this.emptyActionText = 'Create new',
     this.onEmptyActionPressed,
     this.selectedFn,
+    this.fieldPrefix,
   }) : super(key: key);
 
   @override
@@ -223,7 +226,12 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
                         },
                         onEditingComplete: () {},
                       )
-                    : _displayItem ?? Container(),
+                    : Row(
+                        children: [
+                          widget.fieldPrefix ?? Container(),
+                          _displayItem ?? Container(),
+                        ],
+                      ),
               );
             },
           ),
