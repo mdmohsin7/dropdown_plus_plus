@@ -133,7 +133,7 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
   DropdownEditingController<dynamic>? get _effectiveController =>
       widget.controller ?? _controller;
 
-  DropdownFormFieldState() : super() {}
+  DropdownFormFieldState() : super();
 
   @override
   void initState() {
@@ -247,7 +247,7 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
           child: Material(
               elevation: 4.0,
               child: SizedBox(
-                height: widget.dropdownHeight ?? 240,
+                height: widget.dropdownHeight ?? null,
                 child: Container(
                     color: widget.dropdownColor ?? Colors.white70,
                     child: ValueListenableBuilder(
