@@ -78,6 +78,9 @@ class DropdownFormField<T> extends StatefulWidget {
   /// this functon triggers on click of emptyAction button
   final Future<void> Function()? onEmptyActionPressed;
 
+  /// Separator between the dropdown items
+  final Widget? dropdownItemSeparator;
+
   DropdownFormField({
     Key? key,
     required this.dropdownItemFn,
@@ -97,6 +100,7 @@ class DropdownFormField<T> extends StatefulWidget {
     this.emptyText = "No matching found!",
     this.emptyActionText = 'Create new',
     this.onEmptyActionPressed,
+    this.dropdownItemSeparator,
     this.selectedFn,
   }) : super(key: key);
 
@@ -254,7 +258,11 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
                         valueListenable: _listItemsValueNotifier,
                         builder: (context, List<T> items, child) {
                           return _options != null && _options!.length > 0
-                              ? ListView.builder(
+                              ? ListView.separated(
+                                  separatorBuilder: (context, index) {
+                                    return widget.dropdownItemSeparator ??
+                                        Container();
+                                  },
                                   shrinkWrap: true,
                                   padding: EdgeInsets.zero,
                                   itemCount: _options!.length,
