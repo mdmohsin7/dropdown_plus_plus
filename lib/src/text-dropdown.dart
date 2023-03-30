@@ -14,6 +14,10 @@ class TextDropdownFormField extends StatelessWidget {
   final double? dropdownHeight;
   final Color? cursorColor;
   final TextStyle? searchTextStyle;
+  final Color? dropdownColor;
+  final Color? dropdownItemColor;
+  final Color? dropdownItemSelectedColor;
+  final Widget? dropdownItemSeparator;
 
   TextDropdownFormField({
     Key? key,
@@ -28,11 +32,17 @@ class TextDropdownFormField extends StatelessWidget {
     this.dropdownHeight,
     this.cursorColor,
     this.searchTextStyle,
+    this.dropdownItemColor,
+    this.dropdownItemSelectedColor,
+    this.dropdownColor,
+    this.dropdownItemSeparator,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DropdownFormField<String>(
+      dropdownColor: dropdownColor,
+      dropdownItemSeparator: dropdownItemSeparator,
       searchTextStyle: searchTextStyle,
       cursorColor: cursorColor,
       decoration: decoration,
@@ -53,7 +63,11 @@ class TextDropdownFormField extends StatelessWidget {
           ListTile(
         title: Text(
           item,
-          style: TextStyle(color: selected ? Colors.blue : Colors.black87),
+          style: TextStyle(
+            color: selected
+                ? (dropdownItemSelectedColor ?? Colors.blue)
+                : (dropdownItemColor ?? Colors.black87),
+          ),
         ),
         tileColor: focused ? Color.fromARGB(20, 0, 0, 0) : Colors.transparent,
         onTap: onTap,
