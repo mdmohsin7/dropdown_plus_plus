@@ -15,13 +15,21 @@ class TextDropdownFormField extends StatelessWidget {
   final Color? cursorColor;
   final TextStyle? searchTextStyle;
   final TextStyle? displayTextStyle;
+  final Color? dropdownColor;
+  final Color? dropdownItemColor;
+  final Color? dropdownItemSelectedColor;
   final Widget? fieldPrefix;
+  final Widget? dropdownItemSeparator;
 
   TextDropdownFormField({
     Key? key,
     required this.options,
     this.decoration,
     this.onSaved,
+    this.dropdownItemColor,
+    this.dropdownItemSelectedColor,
+    this.dropdownColor,
+    this.dropdownItemSeparator,
     this.controller,
     this.onChanged,
     this.validator,
@@ -37,7 +45,9 @@ class TextDropdownFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownFormField<String>(
+      dropdownColor: dropdownColor,
       searchTextStyle: searchTextStyle,
+      dropdownItemSeparator: dropdownItemSeparator,
       fieldPrefix: fieldPrefix,
       cursorColor: cursorColor,
       decoration: decoration,
@@ -58,7 +68,10 @@ class TextDropdownFormField extends StatelessWidget {
           ListTile(
         title: Text(
           item,
-          style: TextStyle(color: selected ? Colors.blue : Colors.black87),
+          style: TextStyle(
+              color: selected
+                  ? (dropdownItemSelectedColor ?? Colors.blue)
+                  : (dropdownItemColor ?? Colors.black87)),
         ),
         tileColor: focused ? Color.fromARGB(20, 0, 0, 0) : Colors.transparent,
         onTap: onTap,
