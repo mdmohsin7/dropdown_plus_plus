@@ -2,22 +2,25 @@
 
 Simple and easy to use Dropdown in forms with search, keyboard navigation, offiline data source, remote data source and easy customization.
 
-A fork of [dropdown_plus](https://pub.dev/packages/dropdown_plus) with much more customisations.
+A maintained fork of [dropdown_plus](https://pub.dev/packages/dropdown_plus) with a lot more customisations.
 
 ## Getting Started
 
 Simple Text Dropdown.
 
-![](https://github.com/crawlinknetworks/dropdown_plus/blob/master/screenshots/screen1.png?raw=true)
-![](https://github.com/crawlinknetworks/dropdown_plus/blob/master/screenshots/screen6.png?raw=true)
+<img src="screenshots/screen1.png"  width="35%" height="17%">
+<img src="screenshots/screen2.png"  width="35%" height="17%">
+
 
 ```
 TextDropdownFormField(
-    options: ["Male", "Female"],
-    decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        suffixIcon: Icon(Icons.arrow_drop_down),
-        labelText: "Gender"),
+  options: ["Male", "Female"],
+  decoration: InputDecoration(
+      border: OutlineInputBorder(),
+      suffixIcon: Icon(Icons.arrow_drop_down),
+      labelText: "Gender"),
+  cursorColor: Colors.green,
+  dropdownItemColor: Colors.red,
 ),
 ```
 
@@ -29,10 +32,9 @@ dropdown_plus_plus: <lastest version>
 ```
 
 ## Customizable Example
-
-![](https://github.com/crawlinknetworks/dropdown_plus/blob/master/screenshots/screen4.png?raw=true)
-![](https://github.com/crawlinknetworks/dropdown_plus/blob/master/screenshots/screen3.png?raw=true)
-![](https://github.com/crawlinknetworks/dropdown_plus/blob/master/screenshots/screen5.png?raw=true)
+ 
+<img src="screenshots/screen4.png"  width="35%" height="17%">
+<img src="screenshots/screen5.png"  width="35%" height="17%">
 
 ```
 
@@ -67,6 +69,10 @@ dropdown_plus_plus: <lastest version>
 
 DropdownFormField<Map<String, dynamic>>(
     onEmptyActionPressed: () async {},
+    dropdownItemSeparator: Divider(
+      color: Colors.black,
+      height: 1,
+      ),
     decoration: InputDecoration(
         border: OutlineInputBorder(),
         suffixIcon: Icon(Icons.arrow_drop_down),

@@ -65,12 +65,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.arrow_drop_down),
                   labelText: "Gender"),
+              cursorColor: Colors.green,
+              dropdownItemColor: Colors.red,
             ),
             SizedBox(
               height: 16,
             ),
             DropdownFormField<Map<String, dynamic>>(
               onEmptyActionPressed: () async {},
+              dropdownItemSeparator: Divider(
+                color: Colors.black,
+                height: 1,
+              ),
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.arrow_drop_down),
