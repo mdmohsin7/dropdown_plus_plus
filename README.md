@@ -8,8 +8,8 @@ A maintained fork of [dropdown_plus](https://pub.dev/packages/dropdown_plus) wit
 
 Simple Text Dropdown.
 
-<img src="screenshots/screen1.png"  width="35%" height="17%">
-<img src="screenshots/screen2.png"  width="35%" height="17%">
+<img src="https://github.com/mdmohsin7/dropdown_plus_plus/blob/master/screenshots/screen1.png?raw=true"  width="35%" height="17%">
+<img src="https://github.com/mdmohsin7/dropdown_plus_plus/blob/master/screenshots/screen2.png?raw=true"  width="35%" height="17%">
 
 
 ```
@@ -33,8 +33,8 @@ dropdown_plus_plus: <lastest version>
 
 ## Customizable Example
  
-<img src="screenshots/screen4.png"  width="35%" height="17%">
-<img src="screenshots/screen5.png"  width="35%" height="17%">
+<img src="https://github.com/mdmohsin7/dropdown_plus_plus/blob/master/screenshots/screen4.png?raw=true"  width="35%" height="17%">
+<img src="https://github.com/mdmohsin7/dropdown_plus_plus/blob/master/screenshots/screen5.png?raw=true"  width="35%" height="17%">
 
 ```
 
