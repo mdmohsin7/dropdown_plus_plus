@@ -1,4 +1,4 @@
-import 'package:dropdown_plus_plus/dropdown_plus.dart';
+import 'package:dropdown_plus_plus/dropdown_plus_plus.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dropdown Plus Demo'),
+        title: Text('Dropdown Plus Plus Demo'),
       ),
       body: Container(
         padding: EdgeInsets.all(16),
@@ -65,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.arrow_drop_down),
                   labelText: "Gender"),
-              dropdownHeight: 120,
             ),
             SizedBox(
               height: 16,
