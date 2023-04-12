@@ -1,3 +1,10 @@
+## 0.1.0
+
+* Upgrade dependencies
+* Make dropdown height dynamic
+* Ability to add separator between the dropdown items
+* More customisations and minor fixes
+
 ## 0.0.8
 
 * Fixed onSave issue.
