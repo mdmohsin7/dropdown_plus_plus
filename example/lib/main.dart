@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   labelText: "Access"),
               onSaved: (dynamic str) {},
               onChanged: (dynamic str) {},
-              validator: (dynamic str) {},
+              validator: null,
               displayItemFn: (dynamic item) => Text(
                 (item ?? {})['name'] ?? '',
                 style: TextStyle(fontSize: 16),

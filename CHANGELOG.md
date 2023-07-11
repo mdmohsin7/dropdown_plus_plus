@@ -1,3 +1,7 @@
+## 0.1.0+3
+
+* Update dependencies to latest release.
+
 ## 0.1.0+2
 
 * Update Images in ReadMe
