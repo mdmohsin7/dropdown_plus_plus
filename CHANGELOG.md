@@ -1,3 +1,9 @@
+## 0.1.1
+
+*  Added current value to onEmptyActionPressed function (Thanks to [@djhemath0](https://github.com/djhemath0))
+*  Bump Dart constraint
+*  Added a check before updating the selected option (previously used to throw out of range exception)
+
 ## 0.1.0+3
 
 * Update dependencies to latest release.
