@@ -129,7 +129,7 @@ final double? dropdownHeight;
 final TextStyle? searchTextStyle;
 final String emptyText;
 final String emptyActionText;
-final Future<void> Function()? onEmptyActionPressed;
+final Future<void> Function(String)? onEmptyActionPressed;
 final Widget? dropdownItemSeparator;
 
 ```
