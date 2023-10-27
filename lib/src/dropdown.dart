@@ -426,13 +426,15 @@ class DropdownFormFieldState<T> extends State<DropdownFormField>
   }
 
   _setValue() {
-    var item = _options![_listItemFocusedPosition];
-    _selectedItem = item;
+    if (_options != null && _options!.isNotEmpty) {
+      var item = _options![_listItemFocusedPosition];
+      _selectedItem = item;
 
-    _effectiveController!.value = _selectedItem;
+      _effectiveController!.value = _selectedItem;
 
-    if (widget.onChanged != null) {
-      widget.onChanged!(_selectedItem);
+      if (widget.onChanged != null) {
+        widget.onChanged!(_selectedItem);
+      }
     }
 
     setState(() {});
